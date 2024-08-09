@@ -1,0 +1,19 @@
+{
+    "name": "decode",
+    "version": "1.0.0",
+    "description": "Code Brewers Hackathon 2024 - FullStack Track",
+    "main": "app.js",
+    "scripts": {
+        "dev": "nodemon",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.19.2"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.4"
+    }
+}
