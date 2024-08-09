@@ -23,3 +23,28 @@ Features -
     - Vim Mode
     - Code editor with syntax highlighting and auto completion
     - Forum to discuss
+
+```
+/project-root
+│
+├── /src
+│   ├── /routes
+│   │   └── codeExecution.js
+│   ├── /controllers
+│   │   └── codeExecutionController.js
+│   └── app.js
+│
+├── /docker
+│   ├── /python
+│   │   └── Dockerfile
+│   ├── /javascript
+│   │   └── Dockerfile
+│   ├── /cpp
+│   │   └── Dockerfile
+│   ├── /c
+│   │   └── Dockerfile
+│   └── /java
+│       └── Dockerfile
+│
+└── package.json
+```
