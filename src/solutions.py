@@ -1,0 +1,1 @@
+print("peguin sama jindabad")
