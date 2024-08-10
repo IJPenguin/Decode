@@ -1,10 +1,35 @@
-# /docker/cpp/Dockerfile
-FROM esolang/cpp-clang:latest
+# Stage 1: Build the C++ application
+FROM alpine:latest AS builder
 
-WORKDIR /usr/src/app
+# Install the required build tools
+RUN apk add --no-cache g++ make
 
-COPY . .
+# Set the working directory
+WORKDIR /workspace
 
-RUN g++ solutions.cpp -o code.out
+# Copy the source code into the container
+COPY ./src/solutions.cpp .
 
-CMD ["./code.out"]
+# Compile the C++ file
+RUN g++ -o solutions solutions.cpp
+
+# Stage 2: Create a minimal runtime image
+FROM alpine:latest
+
+# Install the necessary runtime libraries
+RUN apk add --no-cache libstdc++
+
+# Set the working directory for the runtime
+WORKDIR /app
+
+# Add a non-root user for security purposes
+RUN adduser -D app_user
+
+# Copy the compiled binary from the builder stage
+COPY --from=builder --chown=app_user:app_user /workspace/solutions .
+
+# Change to the non-root user
+USER app_user
+
+# Set the command to run the compiled binary
+CMD ["./solutions"]
