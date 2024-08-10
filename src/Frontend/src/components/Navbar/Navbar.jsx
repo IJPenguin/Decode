@@ -10,24 +10,30 @@ const Navbar = () => {
                 <li className="navbar_list_item">DeCode</li>
                 <div className="navbar_list_item_container">
                     <li className="navbar_list_item">
-                        <a href="" className="navbar_list_item_link">
+                        <a href="/contests" className="navbar_list_item_link">
                             Contests
                         </a>
                     </li>
                     <li className="navbar_list_item">
-                        <a href="" className="navbar_list_item_link">
+                        <a href="/questions" className="navbar_list_item_link">
                             Questions
                         </a>
                     </li>
                     {loggedIn ? (
                         <li className="navbar_list_item">
-                            <a href="" className="navbar_list_item_link navbar_list_user">
+                            <a
+                                href="/user"
+                                className="navbar_list_item_link navbar_list_user"
+                            >
                                 {username}
                             </a>
                         </li>
                     ) : (
                         <li className="navbar_list_item">
-                            <a href="" className="navbar_list_item_link navbar_list_login">
+                            <a
+                                href="/login"
+                                className="navbar_list_item_link navbar_list_login"
+                            >
                                 Login
                             </a>
                         </li>

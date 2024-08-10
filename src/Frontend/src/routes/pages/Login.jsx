@@ -1,11 +1,11 @@
 import Layout from "../../components/Layout/Layout";
 
-const Contestpage = () => {
+const Login = () => {
     return (
         <Layout>
-            <>Contestpage</>
+            <>Login</>
         </Layout>
     );
 };
 
-export default Contestpage;
+export default Login;
