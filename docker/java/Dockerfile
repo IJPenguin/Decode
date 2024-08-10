@@ -19,7 +19,7 @@ RUN /usr/lib/jvm/java-11-openjdk/bin/jlink \
 WORKDIR /workspace
 
 # Copy the source code into the container
-COPY ./src/solutions.java .
+COPY ./src/solutions/solutions.java .
 
 # Compile the Java file
 RUN /usr/lib/jvm/java-11-openjdk/bin/javac solutions.java

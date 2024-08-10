@@ -1,29 +1,17 @@
-# Stage 1: Build the Rust application
-FROM rust:alpine AS builder
+# Use a single stage for both building and running
+FROM rust:alpine
 
 # Set the working directory
-WORKDIR /workspace
-
-# Copy the source code into the container
-COPY ./src/solutions.rs .
-
-# Compile the Rust file
-RUN rustc -o solutions solutions.rs
-
-# Stage 2: Create a minimal runtime image
-FROM alpine
-
-# Set the working directory for the runtime
-WORKDIR /app
+WORKDIR /usr/src/app
 
 # Add a non-root user for security purposes
 RUN adduser -D app_user
 
-# Copy the compiled binary from the builder stage
-COPY --from=builder --chown=app_user:app_user /workspace/solutions .
+# Change ownership of the working directory to the non-root user
+RUN chown -R app_user:app_user /usr/src/app
 
 # Change to the non-root user
 USER app_user
 
-# Set the command to run the compiled binary
-CMD ["./solutions"]
+# Set the default command to compile and run the Rust code
+CMD ["sh", "-c", "rustc -o solutions solutions.rs && ./solutions"]
