@@ -22,10 +22,10 @@ const RegisterComponent = () => {
                 data
             )
             .then((response) => {
-                localStorage.setItem("userId", response.data.userId);
-                localStoragesetItem("name", response.data.name);
+                localStorage.setItem("userId", response.data.user.id);
+                localStorage.setItem("name", response.data.user.name);
                 localStorage.setItem("loggedIn", true);
-                window.location.href = "/home";
+                window.location.href = "/";
             })
             .catch((error) => {
                 console.log(error);
@@ -54,7 +54,7 @@ const RegisterComponent = () => {
                 <h1 className="login_page_title">Welcome to DeCode</h1>
                 <p className="login_page_description">
                     DeCode is a platform where you can practice coding and
-                    participate in contests. Join us now!
+                    participate in contests. <br /> Join us now!
                 </p>
             </div>
             <div className="login_form_container">

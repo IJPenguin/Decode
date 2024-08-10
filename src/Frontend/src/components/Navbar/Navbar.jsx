@@ -2,7 +2,10 @@ import { useState } from "react";
 
 const Navbar = () => {
     const loggedIn = localStorage.getItem("loggedIn") === "true";
-    const [username, setUsername] = useState(localStorage.getItem("username"));
+    const [username, setUsername] = useState(
+        localStorage.getItem("name").charAt(0).toUpperCase() +
+            localStorage.getItem("name").slice(1)
+    );
 
     return (
         <nav className="navbar">

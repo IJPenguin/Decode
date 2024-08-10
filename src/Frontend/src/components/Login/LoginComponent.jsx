@@ -46,8 +46,8 @@ const LoginComponent = () => {
             <div className="login_page_text">
                 <h1 className="login_page_title">Welcome Back!!</h1>
                 <p className="login_page_description">
-                    Welcome back! <br />
-                    Let's get back to coding.
+                    Glad to have you back! <br />
+                    Let's pick up where you left off.
                 </p>
             </div>
             <div className="login_form_container">
