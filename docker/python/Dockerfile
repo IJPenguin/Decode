@@ -1,8 +1,14 @@
-# /docker/python/Dockerfile
+# Base image
 FROM python:3.11.7-alpine3.18
 
-WORKDIR /usr/src/app
+# Set the working directory
+WORKDIR /app
 
-COPY . .
+# Add a non-root user for security purposes
+RUN adduser -D app_user
 
+# Change to the non-root user
+USER app_user
+
+# Command to run the Python file
 CMD ["python", "solutions.py"]

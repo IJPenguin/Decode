@@ -1,1 +1,1 @@
-print("peguin sama jindabad")
+print("peguin sama jindabad gg ff")
