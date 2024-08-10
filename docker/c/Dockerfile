@@ -1,16 +1,16 @@
 # Stage 1: Build the C application
 FROM alpine:latest AS builder
 
-# Install the necessary build tools
-RUN apk add --no-cache gcc make
+# Install the required build tools and libraries
+RUN apk add --no-cache gcc make musl-dev
 
 # Set the working directory
 WORKDIR /workspace
 
-# Copy the C source code into the container
+# Copy the source code into the container
 COPY ./src/solutions.c .
 
-# Compile the C source code
+# Compile the C file
 RUN gcc -o solutions solutions.c
 
 # Stage 2: Create a minimal runtime image
