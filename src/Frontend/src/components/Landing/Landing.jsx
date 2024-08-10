@@ -1,5 +1,10 @@
+import HeroSection from "../HeroSection/HeroSection";
 const Landing = () => {
-    return <>Landing</>;
+    return (
+        <>
+            <HeroSection />
+        </>
+    );
 };
 
 export default Landing;
