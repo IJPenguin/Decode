@@ -13,13 +13,13 @@ function App() {
         <Router>
             <Routes>
                 <Route exact path="/" element={<Homepage />} />
-                <Route path="/contests" element={Contests} />
-                <Route path="/questions" element={Questions} />
-                <Route path="/user" element={Userpage} />
-                <Route path="/login" element={Login} />
-                <Route path="/register" element={Register} />
-                <Route path="/addquestion" element={AddQuestionpage} />
-                <Route path="/coding" element={Codingpage} />
+                <Route path="/contests" element={<Contests />} />
+                <Route path="/questions" element={<Questions />} />
+                <Route path="/user" element={<Userpage />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/addquestion" element={<AddQuestionpage />} />
+                <Route path="/coding" element={<Codingpage />} />
             </Routes>
         </Router>
     );

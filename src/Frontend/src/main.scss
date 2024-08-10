@@ -34,6 +34,7 @@ $footer-text-size: 1.4rem;
 html {
     font-size: 10px;
     font-family: $font-family;
+    scroll-behavior: smooth;
 }
 
 *,
@@ -208,7 +209,118 @@ nav {
         }
 
         .features_section_card:hover {
-            border: $yellow 1px solid;
+            border: $pink 1px solid;
+        }
+    }
+}
+
+.login_page {
+    background-color: $color-background-black;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+
+    .login_page_image {
+        width: 30vw;
+        height: 100vh;
+        object-fit: cover;
+    }
+
+    .login_page_text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 35vw;
+
+        .login_page_title {
+            font-size: $font-size-h1;
+            color: $green;
+            font-weight: bold;
+            letter-spacing: -1.5px;
+            margin-bottom: 2rem;
+        }
+
+        .login_page_description {
+            font-size: $font-size-h4;
+            color: $white;
+            max-width: 40rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .login_form_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 35vw;
+
+        h1 {
+            font-size: $font-size-h1;
+            color: $green;
+            font-weight: bold;
+            letter-spacing: -1.5px;
+            margin-bottom: 2rem;
+        }
+
+        input {
+            font-family: "JetBrains Mono", monospace;
+            background-color: $color-background-black;
+            color: $white;
+            width: 35rem;
+            font-size: $font-size-h5;
+            padding: 1rem 2rem;
+            border: none;
+            border-bottom: $white 1px solid;
+            transition: all 0.3s;
+            margin-bottom: 3rem;
+        }
+
+        input:focus {
+            border: none;
+            outline: none;
+            border-bottom: $pink 1px solid;
+        }
+
+        .ok {
+            border-bottom: $green 1px solid;
+        }
+
+        .error {
+            border-bottom: $red 1px solid;
+        }
+
+        button {
+            background-color: $pink;
+            color: $color-background-black;
+            font-size: $font-size-h4;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background-color: $green;
+        }
+
+        span {
+            color: $white;
+            font-size: $font-size-h6;
+            margin-top: 2rem;
+
+            a {
+                color: $pink;
+                text-decoration: none;
+            }
+
+            a:hover {
+                color: $green;
+            }
         }
     }
 }
