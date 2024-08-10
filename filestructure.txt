@@ -1,0 +1,85 @@
+|-- .gitignore
+|-- docker
+    |-- c
+        |-- Dockerfile
+    |-- cpp
+        |-- Dockerfile
+    |-- java
+        |-- Dockerfile
+    |-- javascript
+        |-- Dockerfile
+    |-- python
+        |-- Dockerfile
+    |-- rust
+        |-- Dockerfile
+|-- LICENSE
+|-- package-lock.json
+|-- package.json
+|-- README.md
+|-- src
+    |-- Backend
+        |-- .env
+        |-- app.js
+        |-- auth
+            |-- passport.js
+        |-- controllers
+            |-- authController.js
+            |-- codeExecutionController.js
+        |-- middleware
+            |-- globalLimiter.js
+        |-- models
+            |-- User.js
+        |-- package-lock.json
+        |-- package.json
+        |-- routes
+            |-- authRoutes.js
+            |-- codeExecution.js
+            |-- userRoutes.js
+        |-- utils
+            |-- decode-432122-cb00b58767a0.json
+            |-- fileCleanup.js
+            |-- gcsConfig.js
+            |-- passwordUtils.js
+    |-- Frontend
+        |-- eslint.config.js
+        |-- index.html
+        |-- package-lock.json
+        |-- package.json
+        |-- src
+            |-- assets
+                |-- images
+                    |-- hero_image.jpg
+            |-- components
+                |-- FeaturesSection
+                    |-- FeaturesSection.jsx
+                |-- Footer
+                    |-- Footer.jsx
+                |-- HeroSection
+                    |-- HeroSection.jsx
+                |-- Landing
+                    |-- Landing.jsx
+                |-- Layout
+                    |-- Layout.jsx
+                |-- Navbar
+                    |-- Navbar.jsx
+            |-- main.jsx
+            |-- main.scss
+            |-- routes
+                |-- App.jsx
+                |-- pages
+                    |-- Addquestionpage.jsx
+                    |-- Codingpage.jsx
+                    |-- Contestpage.jsx
+                    |-- Homepage.jsx
+                    |-- Questionpage.jsx
+                    |-- Userpage.jsx
+        |-- vite.config.js
+    |-- solutions
+        |-- solutions
+        |-- solutions.c
+        |-- solutions.cpp
+        |-- solutions.js
+        |-- solutions.py
+        |-- solutions.rs
+    |-- src
+        |-- solutions
