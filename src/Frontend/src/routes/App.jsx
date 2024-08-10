@@ -1,12 +1,25 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Homepage from "./pages/Homepage.jsx";
-// Import Stying
+import Contests from "./pages/Contestpage.jsx";
+import Questions from "./pages/Questionpage.jsx";
+import Userpage from "./pages/Userpage.jsx";
+import Login from "./pages/Login.jsx";
+import Register from "./pages/Register.jsx";
+import AddQuestionpage from "./pages/Addquestionpage.jsx";
+import Codingpage from "./pages/Codingpage.jsx";
 
 function App() {
     return (
         <Router>
             <Routes>
                 <Route exact path="/" element={<Homepage />} />
+                <Route path="/contests" element={Contests} />
+                <Route path="/questions" element={Questions} />
+                <Route path="/user" element={Userpage} />
+                <Route path="/login" element={Login} />
+                <Route path="/register" element={Register} />
+                <Route path="/addquestion" element={AddQuestionpage} />
+                <Route path="/coding" element={Codingpage} />
             </Routes>
         </Router>
     );

@@ -1,11 +1,12 @@
 import Layout from "../../components/Layout/Layout";
 
-const Contestpage = () => {
+const Register = () => {
     return (
         <Layout>
-            <>Contestpage</>
+            <>Register</>
         </Layout>
     );
 };
 
-export default Contestpage;
+export default Register;
+

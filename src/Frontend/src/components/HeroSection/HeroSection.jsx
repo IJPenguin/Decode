@@ -1,4 +1,5 @@
 import HeroImage from "../../assets/images/hero_image.jpg";
+import Button from "../Button/Button";
 
 const HeroSection = () => {
     return (
@@ -12,6 +13,13 @@ const HeroSection = () => {
                     challenges, compete with peers, and refine your coding
                     skills with our powerful tools
                 </p>
+                <Button
+                    text="Get Started"
+                    classNames="hero_section_button"
+                    clickHandler={() => {
+                        window.location.href = "/register";
+                    }}
+                />
             </div>
             <div className="hero_section_image">
                 <img
