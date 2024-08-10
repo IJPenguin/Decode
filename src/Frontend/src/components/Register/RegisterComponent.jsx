@@ -1,33 +1,40 @@
-import LoginImage from "../../assets/images/login_image.jpg";
-import { useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
+import LoginImage from "../../assets/images/login_image.jpg";
 
-const LoginComponent = () => {
+const RegisterComponent = () => {
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [nameVal, setNameVal] = useState(0);
     const [emailVal, setEmailVal] = useState(0);
     const [passwordVal, setPasswordVal] = useState(0);
 
-    const handleLogin = (email, password) => {
+    const handleRegister = (name, email, password) => {
         const data = {
+            name: name,
             email: email,
             password: password,
         };
         axios
             .post(
-                "https://1c07-2409-40c4-164-c735-2411-911f-dbc3-83ba.ngrok-free.app/auth/login",
+                "https://1c07-2409-40c4-164-c735-2411-911f-dbc3-83ba.ngrok-free.app/auth/register",
                 data
             )
             .then((response) => {
-                console.log(response);
                 localStorage.setItem("userId", response.data.userId);
-                localStorage.setItem("name", response.data.name);
+                localStoragesetItem("name", response.data.name);
                 localStorage.setItem("loggedIn", true);
                 window.location.href = "/home";
             })
             .catch((error) => {
                 console.log(error);
             });
+    };
+
+    const nameChangeHandler = (e) => {
+        setName(e.target.value);
+        setNameVal((prev) => prev + 1);
     };
 
     const emailChangeHandler = (e) => {
@@ -44,14 +51,24 @@ const LoginComponent = () => {
         <div className="login_page">
             <img src={LoginImage} alt="Login" className="login_page_image" />
             <div className="login_page_text">
-                <h1 className="login_page_title">Welcome Back!!</h1>
+                <h1 className="login_page_title">Welcome to DeCode</h1>
                 <p className="login_page_description">
-                    Welcome back! <br />
-                    Let's get back to coding.
+                    DeCode is a platform where you can practice coding and
+                    participate in contests. Join us now!
                 </p>
             </div>
             <div className="login_form_container">
-                <h1 className="login_form_title">Login</h1>
+                <h1 className="login_form_title">Register</h1>
+
+                <input
+                    type="text"
+                    placeholder="Name"
+                    value={name}
+                    onChange={nameChangeHandler}
+                    className={`login_form_input login_form_name ${
+                        nameVal > 0 ? (name === "" ? "error" : "ok") : ""
+                    }`}
+                />
 
                 <input
                     type="text"
@@ -81,14 +98,14 @@ const LoginComponent = () => {
                 />
                 <button
                     className="login_form_button"
-                    onClick={() => handleLogin(email, password)}
+                    onClick={() => handleRegister(name, email, password)}
                 >
-                    Login
+                    Register
                 </button>
                 <span>
-                    Don't have an account?{" "}
-                    <a href="/register" className="login_form_link">
-                        Register
+                    Already have an account?{" "}
+                    <a href="/login" className="login_form_link">
+                        Login
                     </a>
                 </span>
             </div>
@@ -96,4 +113,4 @@ const LoginComponent = () => {
     );
 };
 
-export default LoginComponent;
+export default RegisterComponent;

@@ -1,9 +1,6 @@
-import Layout from "../../components/Layout/Layout";
-
+import RegisterComponent from "../../components/Register/RegisterComponent";
 const Register = () => {
-    return (
-    );
+    return <RegisterComponent />;
 };
 
 export default Register;
-
