@@ -7,6 +7,13 @@ const Navbar = () => {
             localStorage.getItem("name").slice(1)
     );
 
+    const logout = () => {
+        localStorage.setItem("loggedIn", false);
+        localStorage.setItem("name", "");
+        localStorage.setItem("userId", "");
+        window.location.href = "/";
+    };
+
     return (
         <nav className="navbar">
             <ul className="navbar_list">
@@ -29,6 +36,13 @@ const Navbar = () => {
                                 className="navbar_list_item_link navbar_list_user"
                             >
                                 {username}
+                            </a>
+                            <a
+                                href="/"
+                                onClick={logout}
+                                className="navbar_list_item_link"
+                            >
+                                Logout
                             </a>
                         </li>
                     ) : (
