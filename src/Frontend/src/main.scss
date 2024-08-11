@@ -66,7 +66,7 @@ nav {
         list-style: none;
         justify-content: space-between;
         li {
-            margin-left: 2rem;
+            margin-right: 3rem;
         }
 
         .navbar_list_item_container {
@@ -75,10 +75,12 @@ nav {
 
             .navbar_list_login {
                 color: $green;
+                margin-right: 3rem;
             }
 
             .navbar_list_user {
                 color: $yellow;
+                margin-right: 3rem;
             }
         }
     }
@@ -107,7 +109,7 @@ nav {
     padding-right: 34.5rem;
     display: flex;
     justify-content: space-between;
-    border-bottom: $border-color 1px solid;
+    // border-bottom: $border-color 1px solid;
     max-height: 80rem;
     overflow: hidden;
 
@@ -334,13 +336,39 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: all 0.3s;
 
     .question_page_title {
         font-size: $font-size-h1;
         color: $green;
         font-weight: bold;
         letter-spacing: -1.5px;
-        margin-bottom: 5rem;
+        margin-bottom: 3rem;
+    }
+
+    .question_add_question_text {
+        font-size: $font-size-h4;
+        color: $white;
+        margin-bottom: 2rem;
+        margin-right: 1rem;
+    }
+
+    .question_add_question {
+        margin-bottom: 3rem;
+    }
+
+    .question_add_question_link {
+        font-size: $font-size-h4;
+        color: $pink;
+        text-decoration: none;
+    }
+
+    .question_add_question_link:hover {
+        color: $green;
+    }
+
+    .question_add_question_link:visited {
+        color: $pink;
     }
 }
 
@@ -366,6 +394,11 @@ nav {
         color: $white;
         padding: 1rem 2rem;
         width: 50rem;
+        text-decoration: none;
+    }
+
+    .question_card_title:hover {
+        color: $green;
     }
 
     .question_card_difficulty {

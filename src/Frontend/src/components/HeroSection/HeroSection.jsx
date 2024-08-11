@@ -2,6 +2,13 @@ import HeroImage from "../../assets/images/hero_image.jpg";
 import Button from "../Button/Button";
 
 const HeroSection = () => {
+    const getStartedClickHandler = () => {
+        if (localStorage.getItem("loggedIn")) {
+            window.location.href = "/questions";
+        } else {
+            window.location.href = "/register";
+        }
+    };
     return (
         <div className="hero_section_container">
             <div className="hero_section_text">
@@ -16,9 +23,7 @@ const HeroSection = () => {
                 <Button
                     text="Get Started"
                     classNames="hero_section_button"
-                    clickHandler={() => {
-                        window.location.href = "/register";
-                    }}
+                    clickHandler={getStartedClickHandler}
                 />
             </div>
             <div className="hero_section_image">

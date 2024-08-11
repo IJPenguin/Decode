@@ -9,21 +9,17 @@ const LoginComponent = () => {
     const [passwordVal, setPasswordVal] = useState(0);
 
     const handleLogin = (email, password) => {
-        const data = {
-            email: email,
-            password: password,
-        };
         axios
             .post(
                 "https://1c07-2409-40c4-164-c735-2411-911f-dbc3-83ba.ngrok-free.app/auth/login",
-                data
+                { email: email, password: password }
             )
             .then((response) => {
-                console.log(response);
+                console.log(response.data);
                 localStorage.setItem("userId", response.data.userId);
                 localStorage.setItem("name", response.data.name);
                 localStorage.setItem("loggedIn", true);
-                window.location.href = "/home";
+                window.location.href = "/";
             })
             .catch((error) => {
                 console.log(error);
