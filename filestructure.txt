@@ -34,11 +34,13 @@
         |-- routes
             |-- authRoutes.js
             |-- codeExecution.js
+            |-- contestRoutes.js
             |-- userRoutes.js
         |-- utils
             |-- decode-432122-cb00b58767a0.json
             |-- fileCleanup.js
             |-- gcsConfig.js
+            |-- generateSecret.js
             |-- passwordUtils.js
     |-- Frontend
         |-- eslint.config.js
@@ -48,8 +50,15 @@
         |-- src
             |-- assets
                 |-- images
+                    |-- code_icon.svg
                     |-- hero_image.jpg
+                    |-- library_icon.svg
+                    |-- trophy_icon.svg
             |-- components
+                |-- Button
+                    |-- Button.jsx
+                |-- Card
+                    |-- Card.jsx
                 |-- FeaturesSection
                     |-- FeaturesSection.jsx
                 |-- Footer
@@ -62,6 +71,8 @@
                     |-- Layout.jsx
                 |-- Navbar
                     |-- Navbar.jsx
+                |-- QuestionCard
+                    |-- QuestionCard.jsx
             |-- main.jsx
             |-- main.scss
             |-- routes
@@ -71,7 +82,9 @@
                     |-- Codingpage.jsx
                     |-- Contestpage.jsx
                     |-- Homepage.jsx
+                    |-- Login.jsx
                     |-- Questionpage.jsx
+                    |-- Register.jsx
                     |-- Userpage.jsx
         |-- vite.config.js
     |-- solutions
