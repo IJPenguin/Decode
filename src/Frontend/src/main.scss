@@ -611,3 +611,73 @@ nav {
         margin-top: 2rem;
     }
 }
+
+.code_editor_wrapper {
+    width: 80vw;
+    margin: 10rem auto;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .code_editor_header_content {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        .code_editor_heading {
+            font-size: $font-size-h1;
+            color: $green;
+            font-weight: bold;
+        }
+
+        .editor_controls {
+            label {
+                margin-right: 0.7rem;
+                font-size: $font-size-h4;
+                color: $white;
+            }
+            select {
+                margin-right: 2rem;
+                font-size: $font-size-h6;
+                padding: 0.5rem 1rem;
+                border: none;
+                background-color: $color-background;
+                color: $white;
+                option {
+                    background-color: $color-background;
+                    color: $white;
+                }
+            }
+
+            input {
+                font-size: $font-size-h6;
+                padding: 0.5rem 1rem;
+                border: none;
+                background-color: $color-background;
+                color: $white;
+                -moz-appearance: textfield;
+                appearance: textfield;
+            }
+        }
+    }
+
+    .code_editor_submit_button {
+        background-color: $pink;
+        color: $color-background-black;
+        font-size: $font-size-h4;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+        margin: 2rem;
+    }
+
+    .code_editor_submit_button:hover {
+        background-color: $green;
+    }
+}
