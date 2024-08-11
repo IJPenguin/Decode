@@ -55,6 +55,7 @@ nav {
     font-size: $font-size-h4;
     height: 6rem;
     padding: 1.7rem 20rem;
+    border-bottom: $border-color 1px solid;
 
     a {
         color: $white;
@@ -77,15 +78,12 @@ nav {
                 color: $green;
                 margin-right: 3rem;
             }
-
-            .navbar_list_user {
-                color: $yellow;
-                margin-right: 3rem;
-            }
+        }
+        .navbar_list_user {
+            color: $yellow;
+            margin-right: 3rem;
         }
     }
-
-    border-bottom: $border-color 1px solid;
 }
 
 .footer {
@@ -596,7 +594,6 @@ nav {
         color: $blue;
         margin-bottom: 2rem;
         margin-left: 4rem;
-        
     }
 
     .question_content_input_description {
