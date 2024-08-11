@@ -26,7 +26,7 @@ exports.register = async (req, res) => {
 // Login a user
 exports.login = async (req, res) => {
   const { email, password } = req.body;
-  const db = req.app.locals.db;
+  const db = req.app.locals.db; 
 
   try {
     const user = await db.collection("users").findOne({ email });

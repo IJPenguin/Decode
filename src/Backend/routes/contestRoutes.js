@@ -22,6 +22,7 @@ router.post('/create-contest', async (req, res) => {
       startDate: new Date(startDate),
       endDate: new Date(endDate),
       questions: [], // Will be populated with question IDs
+      submissions: [], // Will store user submissions
       createdAt: new Date(),
     };
 
@@ -70,6 +71,82 @@ router.post('/create-contest', async (req, res) => {
       message: 'Contest created successfully',
       contestId: contestId,
     });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+// Endpoint to submit contest results
+router.post('/submit-contest', async (req, res) => {
+  try {
+    const db = req.app.locals.db;
+    const contestsCollection = db.collection('contests');
+
+    const { contestId, userId, timeTaken, solvedQuestions } = req.body;
+
+    if (!contestId || !userId || !timeTaken || !Array.isArray(solvedQuestions)) {
+      return res.status(400).json({ error: 'Missing required fields or solvedQuestions is not an array' });
+    }
+
+    // Calculate points
+    let points = 0;
+    for (const question of solvedQuestions) {
+      if (question.difficulty === 'easy') {
+        points += 2;
+      } else if (question.difficulty === 'medium') {
+        points += 4;
+      } else if (question.difficulty === 'hard') {
+        points += 8;
+      }
+    }
+
+    const submission = {
+      userId,
+      timeTaken,
+      solvedQuestions: solvedQuestions.length,
+      points,
+    };
+
+    // Update the contest with the new submission
+    await contestsCollection.updateOne(
+      { _id: ObjectId(contestId) },
+      { $push: { submissions: submission } }
+    );
+
+    res.status(201).json({ message: 'Submission successful' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+// Endpoint to get the leaderboard for a contest
+router.get('/leaderboard/:contestId', async (req, res) => {
+  try {
+    const db = req.app.locals.db;
+    const contestsCollection = db.collection('contests');
+
+    const { contestId } = req.params;
+
+    const contest = await contestsCollection.findOne({ _id: ObjectId(contestId) });
+
+    if (!contest) {
+      return res.status(404).json({ error: 'Contest not found' });
+    }
+
+    // Sort submissions by points, time taken, and number of questions solved
+    const leaderboard = contest.submissions.sort((a, b) => {
+      if (b.points !== a.points) {
+        return b.points - a.points;
+      }
+      if (a.timeTaken !== b.timeTaken) {
+        return a.timeTaken - b.timeTaken;
+      }
+      return b.solvedQuestions - a.solvedQuestions;
+    });
+
+    res.status(200).json(leaderboard);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Internal Server Error' });
