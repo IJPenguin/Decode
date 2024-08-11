@@ -82,6 +82,7 @@ const QuestionContent = ({ num_id }) => {
                                             ]
                                         </span>
                                         <br />
+                                        <br />
                                         <span className="question_content_input_title">
                                             Output :
                                         </span>
