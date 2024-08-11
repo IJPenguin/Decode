@@ -547,3 +547,69 @@ nav {
         gap: 3rem;
     }
 }
+
+.question_coding_component_container {
+    color: $white;
+    padding-left: 30rem;
+    padding-right: 30rem;
+    padding-top: 10rem;
+
+    .question_content_container {
+        .question_content_title {
+            font-size: $font-size-h1;
+            color: $green;
+            font-weight: bold;
+            letter-spacing: -1.5px;
+            margin-bottom: 3rem;
+        }
+
+        .question_content_difficulty {
+            font-size: $font-size-h4;
+            margin-bottom: 3rem;
+        }
+
+        .green {
+            color: $green;
+        }
+
+        .red {
+            color: $red;
+        }
+
+        .yellow {
+            color: $yellow;
+        }
+    }
+
+    .question_content_description {
+        font-size: $font-size-h4;
+        color: $white;
+        margin-bottom: 3rem;
+    }
+
+    .question_content_input {
+        margin-top: 5rem;
+    }
+
+    .question_content_input_title {
+        font-size: $font-size-h4;
+        color: $blue;
+        margin-bottom: 2rem;
+        margin-left: 4rem;
+    }
+
+    .question_content_input_description {
+        margin-top: 10rem;
+        font-size: $font-size-h4;
+        color: $white;
+        margin-bottom: 2rem;
+        margin-left: 4rem;
+    }
+
+    .test_case_value {
+        font-size: $font-size-h4;
+        color: $green;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }
+}

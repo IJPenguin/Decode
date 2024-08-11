@@ -3,7 +3,7 @@ import Button from "../Button/Button";
 
 const HeroSection = () => {
     const getStartedClickHandler = () => {
-        if (localStorage.getItem("loggedIn")) {
+        if (localStorage.getItem("loggedIn") == "true") {
             window.location.href = "/questions";
         } else {
             window.location.href = "/register";

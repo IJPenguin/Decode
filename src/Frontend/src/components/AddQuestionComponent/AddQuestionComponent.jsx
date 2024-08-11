@@ -8,12 +8,18 @@ const AddQuestionComponent = () => {
     const [testCases, setTestCases] = useState([{ input: "", output: "" }]);
 
     const handleAddQuestion = () => {
+        const formattedTestCases = testCases.map((testCase) => ({
+            input: JSON.parse(testCase.input),
+            output: JSON.parse(testCase.output),
+        }));
+
         const data = {
             questionTitle: questionTitle,
             question: questionBody,
             difficulty: difficulty,
-            testCases: testCases,
+            testCases: formattedTestCases,
         };
+
         axios
             .post(
                 "https://1c07-2409-40c4-164-c735-2411-911f-dbc3-83ba.ngrok-free.app/api/add-question",
@@ -94,7 +100,7 @@ const AddQuestionComponent = () => {
                 <div key={index} className="test_case">
                     <input
                         type="text"
-                        placeholder="Input"
+                        placeholder='Input (e.g. "[[1, 2, 3, 1]]")'
                         value={testCase.input}
                         onChange={(e) =>
                             handleTestCaseChange(index, "input", e.target.value)
@@ -103,7 +109,7 @@ const AddQuestionComponent = () => {
                     />
                     <input
                         type="text"
-                        placeholder="Output"
+                        placeholder='Output (e.g. "true")'
                         value={testCase.output}
                         onChange={(e) =>
                             handleTestCaseChange(

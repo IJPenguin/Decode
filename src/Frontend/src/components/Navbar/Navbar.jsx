@@ -3,14 +3,14 @@ import { useState } from "react";
 const Navbar = () => {
     const loggedIn = localStorage.getItem("loggedIn") === "true";
     const [username, setUsername] = useState(
-        localStorage.getItem("name").charAt(0).toUpperCase() +
-            localStorage.getItem("name").slice(1)
+        localStorage.getItem("name")?.charAt(0)?.toUpperCase() +
+            localStorage.getItem("name")?.slice(1) || ""
     );
 
     const logout = () => {
         localStorage.setItem("loggedIn", false);
         localStorage.setItem("name", "");
-        localStorage.setItem("userId", "");
+        localStorage.setItem("userId", "");  
         window.location.href = "/";
     };
 

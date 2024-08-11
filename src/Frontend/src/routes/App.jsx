@@ -1,12 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Homepage from "./pages/Homepage.jsx";
 import Contests from "./pages/Contestpage.jsx";
-import Questions from "./pages/Questionpage.jsx";
+import Questions from "./pages/Questionspage.jsx";
 import Userpage from "./pages/Userpage.jsx";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import AddQuestionpage from "./pages/Addquestionpage.jsx";
 import Codingpage from "./pages/Codingpage.jsx";
+import QuestionPage from "./pages/Questionpage.jsx";
 
 function App() {
     return (
@@ -20,6 +21,10 @@ function App() {
                 <Route path="/register" element={<Register />} />
                 <Route path="/addquestion" element={<AddQuestionpage />} />
                 <Route path="/coding" element={<Codingpage />} />
+                <Route
+                    path="/questioninfo/:num_id"
+                    element={<QuestionPage />}
+                />
             </Routes>
         </Router>
     );
