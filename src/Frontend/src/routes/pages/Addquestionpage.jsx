@@ -1,9 +1,10 @@
 import Layout from "../../components/Layout/Layout";
+import AddQuestionComponent from "../../components/AddQuestionComponent/AddQuestionComponent";
 
 const AddQuestionpage = () => {
     return (
         <Layout>
-            <>AddQuestion page</>
+            <AddQuestionComponent />
         </Layout>
     );
 };

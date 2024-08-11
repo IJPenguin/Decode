@@ -407,3 +407,143 @@ nav {
         padding: 1rem 2rem;
     }
 }
+
+.add_question_container {
+    padding-left: 30rem;
+    padding-right: 30rem;
+    padding-top: 5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s;
+
+    .add_question_title {
+        font-size: $font-size-h1;
+        color: $green;
+        font-weight: bold;
+        letter-spacing: -1.5px;
+        margin-bottom: 3rem;
+    }
+
+    .add_question_input {
+        font-family: "JetBrains Mono", monospace;
+        background-color: $color-background-black;
+        color: $white;
+        width: 50rem;
+        font-size: $font-size-h5;
+        padding: 1rem 2rem;
+        border: none;
+        border-bottom: $white 1px solid;
+        transition: all 0.3s;
+        margin-bottom: 3rem;
+    }
+
+    .add_question_input:focus {
+        border: none;
+        outline: none;
+        border-bottom: $pink 1px solid;
+    }
+
+    .add_question_button,
+    .add_test_case_button {
+        background-color: $pink;
+        color: $color-background-black;
+        font-size: $font-size-h4;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+        margin-bottom: 3rem;
+    }
+
+    .add_question_textarea {
+        font-family: "JetBrains Mono", monospace;
+        background-color: $color-background-black;
+        color: $white;
+        width: 50rem;
+        font-size: $font-size-h5;
+        padding: 1rem 2rem;
+        border: none;
+        border-bottom: $white 1px solid;
+        transition: all 0.3s;
+        margin-bottom: 3rem;
+    }
+
+    .add_question_textarea:focus {
+        border: none;
+        outline: $border-color 1px solid;
+    }
+
+    .difficulty_container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-bottom: 3rem;
+
+        p {
+            font-size: $font-size-h4;
+            color: $green;
+        }
+
+        label {
+            font-size: $font-size-h4;
+            color: $white;
+            cursor: pointer;
+
+            span {
+                margin-left: 1rem;
+            }
+        }
+    }
+
+    .add_test_case_heading {
+        font-size: $font-size-h4;
+        color: $green;
+        margin-bottom: 2rem;
+    }
+
+    .test_case_input {
+        font-family: "JetBrains Mono", monospace;
+        background-color: $color-background-black;
+        color: $white;
+        width: 30 rem;
+        font-size: $font-size-h5;
+        padding: 1rem 2rem;
+        border: none;
+        border-bottom: $white 1px solid;
+        transition: all 0.3s;
+        margin-bottom: 3rem;
+        margin-left: 3rem;
+    }
+
+    .test_case_input:focus {
+        border: none;
+        outline: none;
+        border-bottom: $pink 1px solid;
+    }
+
+    .remove_test_case_button {
+        background-color: $red;
+        font-family: "JetBrains Mono", monospace;
+        color: $color-background-black;
+        font-size: $font-size-p;
+        padding: 1rem 1rem;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+        margin-bottom: 3rem;
+        margin-left: 3rem;
+    }
+
+    .remove_test_case_button:hover {
+        background-color: darken($color: $red, $amount: 8);
+    }
+
+    .button_container {
+        display: flex;
+        gap: 3rem;
+    }
+}
