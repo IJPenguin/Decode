@@ -1,9 +1,9 @@
-const QuestionCard = ({ title, difficulty, content }) => {
+const QuestionCard = ({ title, difficulty, number }) => {
     return (
-        <div className="QuestionCard">
-            <h1>{title}</h1>
-            <h2>{difficulty}</h2>
-            <p>{content}</p>
+        <div className="question_card">
+            <h1 className="question_card_number">{number}</h1>
+            <a href={`/:${number}`}>{title}</a>
+            <h1 className="question_card_difficulty">{difficulty}</h1>
         </div>
     );
 };

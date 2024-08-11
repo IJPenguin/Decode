@@ -327,3 +327,50 @@ nav {
     }
 }
 
+.question_page_container {
+    padding-left: 30rem;
+    padding-right: 30rem;
+    padding-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .question_page_title {
+        font-size: $font-size-h1;
+        color: $green;
+        font-weight: bold;
+        letter-spacing: -1.5px;
+        margin-bottom: 5rem;
+    }
+}
+
+.question_card {
+    background-color: $color-background-black;
+    border-radius: 10px;
+    border: $border-color 1px solid;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+    gap: 2rem;
+    margin-bottom: 2rem;
+
+    .question_card_number {
+        font-size: $font-size-h4;
+        color: $blue;
+        font-weight: bold;
+        padding: 1rem 2rem;
+    }
+
+    .question_card_title {
+        font-size: $font-size-h4;
+        color: $white;
+        padding: 1rem 2rem;
+        width: 50rem;
+    }
+
+    .question_card_difficulty {
+        font-size: $font-size-h4;
+        color: $green;
+        padding: 1rem 2rem;
+    }
+}
