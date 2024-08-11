@@ -109,7 +109,7 @@ nav {
     padding-right: 34.5rem;
     display: flex;
     justify-content: space-between;
-    border-bottom: $border-color 1px solid;
+    // border-bottom: $border-color 1px solid;
     max-height: 80rem;
     overflow: hidden;
 
@@ -344,6 +344,13 @@ nav {
         font-weight: bold;
         letter-spacing: -1.5px;
         margin-bottom: 3rem;
+    }
+
+    .question_add_question_text {
+        font-size: $font-size-h4;
+        color: $white;
+        margin-bottom: 2rem;
+        margin-right: 1rem;
     }
 
     .question_add_question {

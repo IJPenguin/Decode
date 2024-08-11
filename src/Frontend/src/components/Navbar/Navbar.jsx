@@ -17,7 +17,9 @@ const Navbar = () => {
     return (
         <nav className="navbar">
             <ul className="navbar_list">
-                <li className="navbar_list_item">DeCode</li>
+                <li className="navbar_list_item">
+                    <a href="/">DeCode</a>
+                </li>
                 <div className="navbar_list_item_container">
                     <li className="navbar_list_item">
                         <a href="/contests" className="navbar_list_item_link">

@@ -31,6 +31,9 @@ const QuestionsComponent = () => {
         <div className="question_page_container">
             <h1 className="question_page_title">Questions</h1>
             <div className="question_add_question">
+                <span className="question_add_question_text">
+                    Have a question?
+                </span>
                 <a href="/addquestion" className="question_add_question_link">
                     Add Question
                 </a>
